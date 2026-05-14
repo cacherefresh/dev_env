@@ -1,5 +1,20 @@
+# Terminal Updates, adding git Aliases etc. 
+Reduce , Reuse, Recycle, and REDUCE BITROT!
+the tiny little 1 minute things that you use every day a million times adds up. 
+same as holding shift and right clicking to open a terminal at a designated folder rather than CHANGE DIRECTORYing every time.... so here are some helpers. 
+
+## zsh and oh-my-zsh
+use it. there is enough documentation out there. but add the current working directory and git branch to show up in your terminal. it will save you headache. 
+
+## adding git alias git prune-gone
+this will git fetch --prune, and then delete all the branches locally that are gone upstream that have been merged already as you branches will grow. 
+
+``
+git config --global alias.prune-gone '!git fetch --prune && git branch -vv | grep ": gone]" | awk "{print \$1}" | xargs -r git branch -d'
+``
 
 ##Some Commands to ease navigation: 
+
 ### adding up arrow filter
 brief description: 
   this will make it so when you type a few letters you can hit the up arrow ( ↑ ) 
